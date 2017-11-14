@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 16:14:18 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/14 12:42:06 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/14 17:02:33 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@
 
 int		ft_error(char *str, int argc);
 int		ft_error2(char *str);
+void	ft_solv(char **tab);
+char	**ft_convert(char *str);
 
 #endif

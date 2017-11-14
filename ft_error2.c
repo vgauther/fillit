@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 12:39:45 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/14 14:33:29 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/14 16:24:32 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ int		tetriminosisgood(char *str)
 		num++;
 		if (num == 5)
 		{
-			printf("%d\n", y);
 			num = 1;
 			if (k < 3)
 			{
@@ -84,7 +83,6 @@ int		tetriminosisgood(char *str)
 		x = 0;
 		y++;
 	}
-	//printf("%d",y);
 	return (1);
 }
 
