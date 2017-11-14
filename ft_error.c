@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 16:21:37 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/13 19:48:38 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/14 12:50:49 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,33 +23,20 @@ int		ft_syntaxisgood(char *str)
 {
 	int i;
 	int k;
-	int p;
 
 	i = 0;
 	k = 0;
-	p = 0;
 	while (str[i])
 	{
-		while (k != 4)
-		{
-			i = ft_findchr(str, '\n', i);
-			printf("%d",i);
-			if(i - p != 4 && i - p != 5)
-				return (3);
+		if((str[i] == '\n' && k % 4 == 0) ||(str[i] == '\n' && k == 0))
 			k++;
-			p = ft_findchr(str, '\n', p);
-			printf("%c",str[i]);
-			printf("%c", 'l');
-			i++;
-		}
-		//printf("%c",str[i]);
-		//printf("%c",str[i]);
-		if(str[i+1] != '.' && str[i+1] != '#')
+		if(k == 4 && k != 0)
 		{
-			printf("%c", str[i+1]);
-			return (4);
+			if(str[i+1] != '\n')
+				return (0);
 		}
-		k = 0;
+		if (str[i] == '\n'&& str[i + 1] =='\n' && str[i + 2] == '\n' )
+			return (0);
 		i++;
 	}
 	return (1);
@@ -61,12 +48,14 @@ int		ft_error(char *str, int argc)
 
 	i = 0;
 	if (argc != 2)
-		return (5);
+		return (0);
 	while(str[i])
 	{
 		if(str[i] != '.' && str[i] != '#' && str[i] != '\n')
-			return (2);
+			return (0);
 		i++;
 	}
+	if(ft_error2(str) == 0)
+		return (0);
 	return(ft_syntaxisgood(str));
 }
